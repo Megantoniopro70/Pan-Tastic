@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5deb3;
+}
+
+/* MENÚ */
+.menu{
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BOTÓN CENTRAL */
+.menu .toggle{
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.menu.active .toggle{
+  transform: rotate(45deg);
+}
+
+/* LISTA */
+.menu ul{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+}
+
+/* ICONOS */
+.menu ul li{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55px;
+  height: 55px;
+  background: var(--clr);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  transition: 0.6s;
+}
+
+.menu.active ul li{
+  --angle: calc(var(--i) * 28deg);
+  transform: translate(
+    calc(-50% - 110px * cos(var(--angle))),
+    calc(-50% - 110px * sin(var(--angle)))
+  );
+}
+
+.menu ul li a{
+  color: white;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.menu ul li.whatsapp{
+background: #25D366;
+}
+
+.menu{
+  position: fixed;      
+  bottom: 25px;         
+  right: 25px;          
+  width: 90px;
+  height: 90px;
+  z-index: 9999;        
+}
+
+@media (max-width: 768px){
+  .menu{
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.85);
+  }
+}
+
+
+
+
+
