@@ -474,15 +474,49 @@
                 
                 <div class="contact-layout">
                     <div class="contact-info">
-                        <div class="info-item"><i class="fas fa-map-marker-alt"></i><div>Blvd. Agua Caliente 2798-21</div></div>
-                        <div class="info-item"><i class="fas fa-clock"></i><div>Lunes a Sábado: 7am - 8pm</div></div>
+                        <h3>Visítanos</h3>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Ubicación:</strong><br>
+                                Blvd. Agua Caliente 2798-21, Davila<br>
+                                C.P. 22044, Tijuana, B.C., México
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horarios de Atención:</strong><br>
+                                Lunes a Domingo: 7:00 AM - 8:00 PM<br>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <strong>Teléfono / Pedidos:</strong><br>
+                                +52 (664) xxxxxxx
+                            </div>
+                        </div>
                     </div>
+
                     <div class="contact-form">
-                        <form action="#">
-                            <div class="form-group"><input type="text" class="form-control" placeholder="Nombre"></div>
-                            <div class="form-group"><input type="email" class="form-control" placeholder="Correo"></div>
-                            <div class="form-group"><textarea class="form-control" placeholder="Mensaje"></textarea></div>
-                            <button class="btn-submit">Enviar</button>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" class="form-control" placeholder="tu@correo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">¿En qué podemos ayudarte?</label>
+                                <textarea id="mensaje" class="form-control" placeholder="Escribe tu duda, pedido o comentario aquí..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Enviar Mensaje</button>
                         </form>
                     </div>
                 </div>
@@ -523,5 +557,6 @@
 
 </body>
 </html>
+
 
 
