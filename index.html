@@ -63,10 +63,10 @@ color: white;
 
 /* Menú */
 .nav-menu {
-  display: flex;
-  gap: 100px;
-  align-items: center;
-}
+  position: fixed;
+  top: 80px; /* mismo espacio que tu padding-top */
+  right: -100%;
+  background: #8b5e3c; /* mismo color que navbar */
 
 .nav-menu a {
   flex: 1;
@@ -94,30 +94,31 @@ color: white;
 
 /* Botón hamburguesa (oculto en desktop) */
 .menu-toggle {
-  display: none;
-  font-size: 24px;
+  display: block;
+  font-size: 28px;
   color: white;
-  cursor: pointer;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
   .menu-toggle {
     display: block;
+    font-size: 28px;
+    color: white;
   }
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 80px;
     right: -100%;
-    background: #1f2937;
-    flex-direction: column;
     width: 220px;
-    height: 100vh;
-    padding: 30px;
+    height: calc(100vh - 80px);
+    background-color: #8b5e3c;
+    flex-direction: column;
     gap: 30px;
-    transition: 0.3s ease;
+    padding: 30px;
+    transition: right 0.3s ease;
   }
 
   .nav-menu.active {
@@ -359,6 +360,7 @@ opacity:1;
 </body>
 
 </html>
+
 
 
 
