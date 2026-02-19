@@ -1,326 +1,519 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pan-tastic</title>
-  <link rel="stylesheet" href="style27.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanTastic | Panadería Artesanal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-  body{
-    background-color: #f5efe6 ;
-  }
-  .text2{
-    flex: 1;
-    color: white;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
+    :root {
+        --bg-color: #F9F6F0; 
+        --nav-bg: #4A3B32; 
+        --accent: #D97736; 
+        --text-main: #333333;
+        --text-light: #666666;
+    }
 
-  .navbar {
-    width: 100%;
-    background-color: #8b5e3c;
-    padding: 18px 0;
-    position: fixed;   
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  .nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    body {
+        background-color: var(--bg-color);
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-main);
+        overflow-x: hidden;
+    }
 
-  /* Logo */
-  .logo {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-  }
+    h1, h2, h3 {
+        font-family: 'Lora', serif;
+        color: var(--nav-bg);
+    }
 
-  .logo .icon {
-    color: #ff4d4d;
-    margin-right: 8px;
-    font-weight: bold;
-  }
+    /* --- NAVBAR --- */
+    .navbar {
+        width: 100%;
+        background-color: var(--nav-bg);
+        padding: 15px 0;
+        position: fixed;   
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
 
-  /* Menú */
-  .nav-menu {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-  }
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .nav-menu a {
-    flex: 1;
-    text-decoration: none;
-    color: #d1d5db;
-    font-size: 15px;
-    transition: 0.3s;
-  }
+    .logo {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Lora', serif;
+        text-decoration: none;
+    }
 
-  .nav-menu a:hover {
-    color: white;
-  }
-
-  /* Botón especial */
-  .nav-menu .btn {
-    border: 1px solid #fff;
-    padding: 8px 14px;
-    border-radius: 6px;
-  }
-
-  .nav-menu .btn:hover {
-    background: white;
-    color: #1f2937;
-  }
-
-  /* Botón hamburguesa (oculto en desktop) */
-  .menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-
-    .menu-toggle {
-      display: block;
+    .logo img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 12px;
+        object-fit: cover;
     }
 
     .nav-menu {
-      position: fixed;
-      top: 70px;
-      right: -100%;
-      background: #1f2937;
-      flex-direction: column;
-      width: 220px;
-      height: 100vh;
-      padding: 30px;
-      gap: 30px;
-      transition: 0.3s ease;
+        display: flex;
+        gap: 40px;
+        align-items: center;
     }
 
-    .nav-menu.active {
-      right: 0;
+    .nav-menu a {
+        text-decoration: none;
+        color: #E8E8E8;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.3s ease;
     }
 
-  }
-
-  .scroller::-webkit-scrollbar{
-    width: 0px;
-    height: 0px;
-  }
-
-  .scroller {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    padding-top: 80px; 
-  }
-
-  .section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-    scroll-margin-top: 80px;
-    min-height: 100vh;
-  }
-
-  .card{
-    width:min(90vw,600px);
-    aspect-ratio: 4/5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-    max-width: 600px;
-  }
-
-  .layout{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 90%;
-    max-width: 1200px;
-  }
-
-  .text{
-    flex: 1;
-    color: black;
-    text-align: left; /* Alineación a la izquierda para mejor lectura */
-  }
-  .text h2{
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 1rem;
-  }
-  .text p{
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  .image{
-    flex: 1;
-    display: flex;
-    justify-content:center ;
-  }
-  .image img{
-    width: 100%;
-    height: auto;
-    max-width: 450px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  }
-
-  @media (max-width: 768px){
-    .layout{
-      flex-direction: column;
-      text-align: center;
+    .nav-menu a:hover {
+        color: var(--accent);
     }
+
+    .nav-menu .btn {
+        background-color: var(--accent);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: transform 0.3s ease, background-color 0.3s;
+    }
+
+    .nav-menu .btn:hover {
+        background-color: #BF652A;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    /* --- SCROLL SNAP & SECCIONES --- */
+    .scroller {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+
+    .scroller::-webkit-scrollbar {
+        width: 8px;
+    }
+    .scroller::-webkit-scrollbar-thumb {
+        background-color: var(--nav-bg);
+        border-radius: 4px;
+    }
+
+    .section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scroll-snap-align: center;
+        padding: 100px 20px 40px 20px; 
+    }
+
+    /* --- TARJETAS --- */
+    .card {
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        padding: 3rem;
+        width: 100%;
+        max-width: 1100px;
+    }
+
+    .layout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+
     .text {
-      text-align: center; /* Vuelve a centrar en móviles */
+        flex: 1;
+        text-align: left;
     }
-  }
 
-  @keyframes reveal{
-    from{
-      opacity: 0;
-      transform: scale(0.8);
+    .text h2 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        margin-bottom: 1.5rem;
     }
-    to{
-      opacity:1;
-      transform: scale(1.0);
+
+    .text h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--accent);
+        margin-top: 10px;
+        border-radius: 2px;
     }
-  }
+
+    .text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-light);
+    }
+
+    .text strong {
+        color: var(--nav-bg);
+    }
+
+    .image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease;
+    }
+
+    .image img:hover {
+        transform: translateY(-10px);
+    }
+
+    .reverse-layout {
+        flex-direction: row-reverse;
+    }
+
+    /* --- CONTACTO --- */
+    .contact-layout {
+        display: flex;
+        gap: 3rem;
+        align-items: stretch;
+    }
+
+    .contact-info {
+        flex: 1;
+        background-color: var(--bg-color);
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: left;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 1.5rem;
+        color: var(--text-light);
+    }
+
+    .info-item i {
+        color: var(--accent);
+        font-size: 1.2rem;
+        margin-top: 4px;
+    }
+
+    .contact-form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: var(--nav-bg);
+        text-align: left;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: 'Poppins', sans-serif;
+        background-color: #fcfcfc;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .btn-submit {
+        background-color: var(--nav-bg);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: var(--accent);
+    }
+
+    .mini-footer {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #999;
+        border-top: 1px solid #eee;
+        padding-top: 1rem;
+    }
+
+    /* ========================================= */
+    /* TU MENÚ CIRCULAR ANIMADO EXACTO           */
+    /* ========================================= */
+    .menu {
+        position: fixed;      
+        bottom: 25px;          
+        right: 25px;          
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;        
+    }
+
+    .menu .toggle {
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--nav-bg);
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 10;
+        transition: 0.5s;
+    }
+
+    .menu.active .toggle {
+        transform: rotate(45deg);
+        background: var(--nav-bg);
+        color: white;
+    }
+
+    .menu ul {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+    }
+
+    .menu ul li {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 55px;
+        height: 55px;
+        background: var(--clr);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        transition: 0.6s;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .menu.active ul li {
+        --angle: calc(var(--i) * 28deg);
+        transform: translate(
+            calc(-50% - 110px * cos(var(--angle))),
+            calc(-50% - 110px * sin(var(--angle)))
+        );
+    }
+
+    .menu ul li a {
+        color: white;
+        font-size: 1.4rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu ul li.whatsapp {
+        background: #25D366;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 850px) {
+        .menu-toggle { display: block; }
+        .nav-menu {
+            position: fixed; top: 70px; right: -100%; background: var(--nav-bg);
+            flex-direction: column; width: 250px; height: calc(100vh - 70px);
+            padding: 40px 30px; gap: 30px; transition: right 0.4s ease;
+        }
+        .nav-menu.active { right: 0; }
+        .layout, .reverse-layout, .contact-layout { flex-direction: column; text-align: center; }
+        .text { text-align: center; }
+        .text h2::after { margin: 10px auto 0; }
+        
+        .menu {
+            bottom: 15px;
+            right: 15px;
+            transform: scale(0.85);
+        }
+    }
 </style>
 </head>
 <body>
 
-  <header class="navbar">
-  <div class="nav-container">
-    
-    <div class="logo">
-      <span class="icon"><img src="img/logo.jpeg" height="90px" width="90px"></span>
-      <span class="text2">Pan-tastic</span>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><img src="img/logo.jpeg" alt="Logo">PanTastic</a>
+            <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#">Acerca de nosotros</a>
+                <a href="#">Localidades</a>
+                <a href="#">Personal</a>
+                <a href="#" class="btn">Nuestros Panes</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="scroller">
+
+        <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="text">
+                        <h2>Nuestra Misión</h2>
+                        <p>Elaborar y distribuir productos de panadería artesanal de alta calidad, enfocados en cuidar la salud y el bienestar de nuestros consumidores...</p>
+                    </div>
+                    <div class="image"><img src="img/logo.jpeg" alt="Pan"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <div class="layout reverse-layout">
+                    <div class="text">
+                        <h2>Nuestra Visión</h2>
+                        <p>Consolidarnos en los próximos años como la panadería artesanal de referencia en nuestra región por nuestra calidad, innovación y confiabilidad...</p>
+                    </div>
+                    <div class="image"><img src="img/logo.jpeg" alt="Visión"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="text">
+                        <h2>Nuestros Valores</h2>
+                        <p><strong>• Honestidad:</strong> Sin aditivos ocultos.<br><br><strong>• Salud:</strong> Favorecen la digestión.<br><br><strong>• Calidad:</strong> Respeto por la fermentación.</p>
+                    </div>
+                    <div class="image"><img src="img/logo.jpeg" alt="Valores"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="card" style="padding-bottom: 1rem;">
+                <div class="text" style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="display: inline-block;">Contáctanos</h2>
+                </div>
+                
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i><div>Blvd. Agua Caliente 2798-21</div></div>
+                        <div class="info-item"><i class="fas fa-clock"></i><div>Lunes a Sábado: 7am - 8pm</div></div>
+                    </div>
+                    <div class="contact-form">
+                        <form action="#">
+                            <div class="form-group"><input type="text" class="form-control" placeholder="Nombre"></div>
+                            <div class="form-group"><input type="email" class="form-control" placeholder="Correo"></div>
+                            <div class="form-group"><textarea class="form-control" placeholder="Mensaje"></textarea></div>
+                            <button class="btn-submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mini-footer">&copy; 2026 PanTastic. Todos los derechos reservados.</div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
+    <div class="menu" id="circular-menu">
+        <div class="toggle" id="toggle-btn">
+            <i class="fas fa-share-alt"></i>
+        </div>
+        <ul>
+            <li style="--i: 0; --clr: #3446E6"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="whatsapp" style="--i: 1;"><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+            <li style="--i: 2; --clr: #1b1e21"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li style="--i: 3; --clr: #ff5733"><a href="#"><i class="fab fa-reddit-alien"></i></a></li>
+            <li style="--i: 4; --clr: #0a66c2"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
     </div>
 
-    <nav class="nav-menu" id="nav-menu">
-      <a href="#">Acerca de nosotros</a>
-      <a href="#">Localidades</a>
-      <a href="#">Personal</a>
-      <a href="#">Panes</a>
-    </nav>
-
-  </div>
-</header>
-
-<div class="scroller">
-
-     <div class="section">
-      <div class="card">
-        <div class="layout">
-          <div class="text">
-            <h2>Nuestra misión</h2>
-            <p>Elaborar y distribuir productos de panadería artesanal de alta calidad, enfocados en cuidar la salud y el bienestar de nuestros consumidores. En PanTastic, nos comprometemos a ofrecer alimentos frescos y honestos, creados con ingredientes 100% naturales y procesos tradicionales de masa madre, brindando una experiencia excepcional a través de un excelente servicio al cliente.</p>
-          </div>
-          <div class="image">
-            <img src="img/logo.jpeg">
-          </div>
-        </div>
-      </div>
-     </div>
-     
-     <div class="section">
-      <div class="card">
-        <div class="layout">
-          <div class="image"><img src="img/logo.jpeg"></div>   
-          <div class="text">
-            <h2>Nuestra Visión</h2>
-            <p>Consolidarnos en los próximos años como la panadería artesanal de referencia en nuestra región por nuestra calidad, innovación y confiabilidad. Aspiramos a transformar la panificación moderna ofreciendo panes de masa madre enriquecidos que aporten un sabor único y beneficios nutricionales reales, liderando la respuesta a la creciente demanda de una alimentación más natural, nutritiva y consciente.</p>
-          </div>
-        </div>
-      </div>
-     </div>
-
-     <div class="section">
-      <div class="card">
-        <div class="layout">
-          <div class="text">
-            <h2>Nuestros valores</h2>
-            <p>
-              <strong>• Honestidad y Transparencia:</strong> Ingredientes esenciales sin aditivos ocultos.<br><br>
-              <strong>• Salud y Bienestar:</strong> Alimentos funcionales que favorecen la digestión.<br><br>
-              <strong>• Calidad Artesanal:</strong> Respeto por la fermentación biológica tradicional.<br><br>
-              <strong>• Innovación Constante:</strong> Mezclas únicas en la panadería tradicional.<br><br>
-              <strong>• Pasión por el Cliente:</strong> Atención cálida y un servicio posventa excepcional.<br><br>
-              <strong>• Responsabilidad Ambiental:</strong> Uso de empaques ecológicos y procesos limpios.
-            </p>
-          </div>
-          <div class="image">
-            <img src="img/logo.jpeg">
-          </div>
-        </div>
-      </div>
-     </div>
-
-  <div class="menu">
-    <div class="toggle">
-      <i class="fas fa-share-alt"></i>
-      <ion-icon name="share-social"></ion-icon>
-    </div>
-    <ul>
-      <li style="--i: 0; --clr: #3446E6">
-        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      </li>
-      <li class="whatsapp" style="--i: 1;">
-        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </li>
-      <li style="--i: 2; --clr: #1b1e21">
-        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      </li>
-      <li style="--i: 3; --clr: #ff5733">
-        <a href="#" target="_blank"><i class="fab fa-reddit-alien"></i></a>
-      </li>
-      <li style="--i: 4; --clr: #0a66c2">
-        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      </li>
-    </ul>
-  </div>
-
-  </div>
-
-  <script src="script.js"></script>
     <script>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("nav-menu");
+        // Funcionalidad Menú Hamburguesa Arriba
+        const toggleNav = document.getElementById("menu-toggle");
+        const menuNav = document.getElementById("nav-menu");
+        toggleNav.addEventListener("click", () => {
+            menuNav.classList.toggle("active");
+        });
 
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-  });
-</script>
+        // Funcionalidad de Tu Menú Circular Abajo
+        const circularMenu = document.getElementById('circular-menu');
+        const toggleBtn = document.getElementById('toggle-btn');
+        toggleBtn.addEventListener('click', () => {
+            circularMenu.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
 
