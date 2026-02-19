@@ -7,247 +7,226 @@
   <link rel="stylesheet" href="style27.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	
-
-
-
-
 <style>
   body{
-background-color: #f5efe6 ;
+    background-color: #f5efe6 ;
   }
   .text2{
-flex: 1;
-color: white;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-.navbar {
-  width: 100%;
-  background-color: #8b5e3c;
-  padding: 18px 0;
-  position: fixed;   
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.nav-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.logo .icon {
-  color: #ff4d4d;
-  margin-right: 8px;
-  font-weight: bold;
-}
-
-/* Menú */
-.nav-menu {
-  display: flex;
-  gap: 100px;
-  align-items: center;
-}
-
-.nav-menu a {
-  flex: 1;
-  text-decoration: none;
-  color: #d1d5db;
-  font-size: 15px;
-  transition: 0.3s;
-}
-
-.nav-menu a:hover {
-  color: white;
-}
-
-/* Botón especial */
-.nav-menu .btn {
-  border: 1px solid #fff;
-  padding: 8px 14px;
-  border-radius: 6px;
-}
-
-.nav-menu .btn:hover {
-  background: white;
-  color: #1f2937;
-}
-
-/* Botón hamburguesa (oculto en desktop) */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
+    flex: 1;
+    color: white;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
   }
 
+  .navbar {
+    width: 100%;
+    background-color: #8b5e3c;
+    padding: 18px 0;
+    position: fixed;   
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .logo .icon {
+    color: #ff4d4d;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+
+  /* Menú */
   .nav-menu {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    background: #1f2937;
-    flex-direction: column;
-    width: 220px;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .nav-menu a {
+    flex: 1;
+    text-decoration: none;
+    color: #d1d5db;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+
+  .nav-menu a:hover {
+    color: white;
+  }
+
+  /* Botón especial */
+  .nav-menu .btn {
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+
+  .nav-menu .btn:hover {
+    background: white;
+    color: #1f2937;
+  }
+
+  /* Botón hamburguesa (oculto en desktop) */
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      background: #1f2937;
+      flex-direction: column;
+      width: 220px;
+      height: 100vh;
+      padding: 30px;
+      gap: 30px;
+      transition: 0.3s ease;
+    }
+
+    .nav-menu.active {
+      right: 0;
+    }
+
+  }
+
+  .scroller::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+  }
+
+  .scroller {
     height: 100vh;
-    padding: 30px;
-    gap: 30px;
-    transition: 0.3s ease;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    padding-top: 80px; 
   }
 
-  .nav-menu.active {
-    right: 0;
+  .section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-margin-top: 80px;
+    min-height: 100vh;
   }
 
-}
-
-
-
-
-
-
-
-
-
-.scroller::-webkit-scrollbar{
-width: 0px;
-height: 0px;
-}
-
-.scroller {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  padding-top: 80px; 
-}
-
-.section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-  scroll-margin-top: 80px;
-  min-height: 100vh;
-}
-
-
-.card{
-  width:min(90vw,600px);
-  aspect-ratio: 4/5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  max-width: 600px;
-}
-
-.layout{
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 2rem;
-
-width: 90%;
-max-width: 1200px;
-}
-
-.text{
-flex: 1;
-color: black;
-}
-.text h2{
-font-size: clamp(1.8rem, 4vw, 2.5rem);
-margin-bottom: 1rems;
-}
-.text p{
-font-size: 1.1rem;
-line-height: 1.6;
-}
-
-.image{
-flex: 1;
-display: flex;
-justify-content:center ;
-}
-.image img{
-width: 100%;
- height: auto;
-max-width: 450px;
-border-radius: 15px;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px){
-  .layout{
-    flex-direction: column;
+  .card{
+    width:min(90vw,600px);
+    aspect-ratio: 4/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 1.5rem;
+    max-width: 600px;
   }
-}
 
+  .layout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+  }
 
+  .text{
+    flex: 1;
+    color: black;
+    text-align: left; /* Alineación a la izquierda para mejor lectura */
+  }
+  .text h2{
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  .text p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
 
-@keyframes reveal{
-	from{
-opacity: 0;
-transform: scale(0.8);
-	}
-	to{
-opacity:1;
-	transform: scale(1.0);
-	}
-}
+  .image{
+    flex: 1;
+    display: flex;
+    justify-content:center ;
+  }
+  .image img{
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
 
+  @media (max-width: 768px){
+    .layout{
+      flex-direction: column;
+      text-align: center;
+    }
+    .text {
+      text-align: center; /* Vuelve a centrar en móviles */
+    }
+  }
 
+  @keyframes reveal{
+    from{
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to{
+      opacity:1;
+      transform: scale(1.0);
+    }
+  }
 </style>
-
-
-
 </head>
 <body>
 
-  <!--Clase para mi menu de arriba-->
-<header class="navbar">
+  <header class="navbar">
   <div class="nav-container">
     
-    <!-- Logo -->
     <div class="logo">
       <span class="icon"><img src="img/1.jpeg" height="90px" width="90px"></span>
       <span class="text2">Pan-tastic</span>
     </div>
 
-    
     <div class="menu-toggle" id="menu-toggle">
       ☰
     </div>
 
-    <!-- Menú -->
     <nav class="nav-menu" id="nav-menu">
       <a href="#">Acerca de nosotros</a>
       <a href="#">Localidades</a>
@@ -258,70 +237,60 @@ opacity:1;
   </div>
 </header>
 
-
-
-<!--clase para mi scroll-->
-
-	<div class="scroller">
+<div class="scroller">
 
      <div class="section">
-     	<div class="card">
-<div class="layout">
-<div class="text"><h2>Nuestra misión</h2>
-<p>Nuestra visión es ofrecer panes de mejor calidad para nuestros clientes, cuidando su salud y bienestar, con el mismo sabor que tanto les gusta.</p>
-</div>
-<div class="image">
-<img src="img/1.jpeg">
-</div>
-</div>
-</div>
-     	</div>
+      <div class="card">
+        <div class="layout">
+          <div class="text">
+            <h2>Nuestra misión</h2>
+            <p>Elaborar y distribuir productos de panadería artesanal de alta calidad, enfocados en cuidar la salud y el bienestar de nuestros consumidores. En PanTastic, nos comprometemos a ofrecer alimentos frescos y honestos, creados con ingredientes 100% naturales y procesos tradicionales de masa madre, brindando una experiencia excepcional a través de un excelente servicio al cliente.</p>
+          </div>
+          <div class="image">
+            <img src="img/1.jpeg">
+          </div>
+        </div>
+      </div>
+     </div>
      
-
-
      <div class="section">
-     	<div class="card">
-     		<div class="layout">
-     		<div class="image"><img src="img/1.jpeg"></div>		
-     			<div class="text">
-     				<h2>Nuestra Visión</h2>
-     				<p>Nuestra visión es ser una de las panaderías mejor reconocidas, no solo por nuestro sabor, sino también por nuestro enfoque a la salud de nuestros clientes. Ayudando a quien más lo necesita con nuestro sabor.</p>
-     			</div>
-</div>
-     	</div>
+      <div class="card">
+        <div class="layout">
+          <div class="image"><img src="img/1.jpeg"></div>   
+          <div class="text">
+            <h2>Nuestra Visión</h2>
+            <p>Consolidarnos en los próximos años como la panadería artesanal de referencia en nuestra región por nuestra calidad, innovación y confiabilidad. Aspiramos a transformar la panificación moderna ofreciendo panes de masa madre enriquecidos que aporten un sabor único y beneficios nutricionales reales, liderando la respuesta a la creciente demanda de una alimentación más natural, nutritiva y consciente.</p>
+          </div>
+        </div>
+      </div>
      </div>
 
+     <div class="section">
+      <div class="card">
+        <div class="layout">
+          <div class="text">
+            <h2>Nuestros valores</h2>
+            <p>
+              <strong>• Honestidad y Transparencia:</strong> Ingredientes esenciales sin aditivos ocultos.<br><br>
+              <strong>• Salud y Bienestar:</strong> Alimentos funcionales que favorecen la digestión.<br><br>
+              <strong>• Calidad Artesanal:</strong> Respeto por la fermentación biológica tradicional.<br><br>
+              <strong>• Innovación Constante:</strong> Mezclas únicas en la panadería tradicional.<br><br>
+              <strong>• Pasión por el Cliente:</strong> Atención cálida y un servicio posventa excepcional.<br><br>
+              <strong>• Responsabilidad Ambiental:</strong> Uso de empaques ecológicos y procesos limpios.
+            </p>
+          </div>
+          <div class="image">
+            <img src="img/1.jpeg">
+          </div>
+        </div>
+      </div>
+     </div>
 
-
-<div class="section">
-     	<div class="card">
-<div class="layout">
-<div class="text"><h2>Nuestros valores</h2>
-<p>Nuestros valores son los siguientes:<br><br>
-  1. Integridad: Actuamos con honestidad y transparencia hacia nuestros clientes.<br><br>
- 2. Innovación: Buscamos constantemente ser mejores, ya sea por las recomendaciones de nuestros clientes o por experiencias que nos ayuden a mejorar.<br>
-</p>
-</div>
-<div class="image">
-<img src="img/1.jpeg">
-</div>
-</div>
-</div>
-     	</div>
-
-
-
-
- <!-- Menú -->
   <div class="menu">
-    <!-- Toggle para abrir/cerrar -->
     <div class="toggle">
       <i class="fas fa-share-alt"></i>
-
-      <ion-icon name="share-social"></ion-icon> <!-- Icono de compartir -->
+      <ion-icon name="share-social"></ion-icon>
     </div>
-
-    <!-- Lista de enlaces sociales -->
     <ul>
       <li style="--i: 0; --clr: #3446E6">
         <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -341,13 +310,8 @@ opacity:1;
     </ul>
   </div>
 
+  </div>
 
-
-
-
-
-
-	</div>
   <script src="script.js"></script>
     <script>
   const toggle = document.getElementById("menu-toggle");
@@ -358,34 +322,4 @@ opacity:1;
   });
 </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
