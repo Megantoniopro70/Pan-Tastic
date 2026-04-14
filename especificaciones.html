@@ -533,7 +533,7 @@
             transform: scale(0.85);
         }
     }
-    @media (max-width: 850px) {
+      @media (max-width: 850px) {
     .nav-menu {
         overflow-y: auto;   /* 👈 permite scroll */
     }
@@ -551,25 +551,7 @@
     }
 }
 
-    /* Nuevo estilo para el botón Spot de Radio */
-.btn-spot {
-    background-color: var(--accent); /* El color de fondo será el de la paleta de la web */
-    color: white;                    /* Texto en blanco */
-    padding: 12px 25px;              /* Aumentamos el tamaño del botón para hacerlo más prominente */
-    font-size: 1.1rem;               /* Tamaño de fuente cómodo */
-    border-radius: 25px;             /* Bordes redondeados */
-    font-weight: 600;                /* Texto en negrita */
-    text-align: center;              /* Alineación de texto centrado */
-    display: inline-block;           /* Para asegurar que el botón se vea correctamente */
-    text-decoration: none;           /* Eliminamos subrayado del enlace */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Animaciones */
-}
-
-.btn-spot:hover {
-    background-color: #BF652A; /* Cuando se pasa el mouse, cambia el color */
-    transform: scale(1.05); /* Animación de escala al pasar el mouse */
-}
-    /* Dropdown */
+        /* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -624,9 +606,8 @@
             <a href="#" class="logo"><img src="img/1.jpeg" alt="Logo">Pan-Tastic</a>
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html">Incio</a>
+                <a href="index.html">Inicio</a>
     <a href="acercadenosotros.html">Acerca de nosotros</a>
-    <a href="colaboradores.html">Colaboradores</a>
     <a href="contacto.html">Contacto</a>
 
     <!-- Botón desplegable -->
@@ -635,7 +616,7 @@
         <div class="dropdown-content">
             <a href="micionvicionvalores.html">Misión, visión y valores</a>
             <a href="#">Nuestros Panes</a>
-            <a href="especificaciones.html">Especificaciones (Producto)</a>
+            <a href="publicidad.html">Publicidad</a>
             <a href="tecnología.html">Tecnología</a>
             <a href="mantenimiento.html">Mantemiento del equipo</a>
             <a href="diagrama.html">Diagrama de proceso</a>
@@ -651,32 +632,47 @@
 </nav>        </div>
     </header>
 
-
-
     <div class="scroller">
+        <div class="section">
+        <div class="card">
+            <div class="layout">
+                <div class="text">
+                    <center><h2>Especificaciones de nuestro producto</h2></center>
+                    <center><div class="image"><img src="img/8.jpg"></div><center>
+                         <br>
+                        <br>
+                    <p>Nuestros panes son inicialmente saludables, ofreciendo a nuestra comunidad lo mejor de cada uno de estos, facilitándoles las opciones de panes saludables que ofrecemos y así garantizando una buena salud y alegría para todos nuestros consumidores, trayéndoles pan de la mejor calidad, con un precio mas bajo, y nutritivo, de esta forma implementando lo saludable en lo mas simple y constante.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <center><h2>¡¡¡Somos lo que tu necesitas!!!</h2></center>
+                     <center><div class="image"><img src="img/9.jpg"></div><center>
+                        <br>
+                        <br>
+                    
+                    <p>Nuestros panes se caracterizan por ser saludables, así mismo también se caracterizan por ser uno de los panes creados con masa madre, ofreciendo mejor digestión y salud para nuestros consumidores.<br><br>
 
+El color de nuestros panes es sin igual, pues son recién salidos del horno, hasta tu mesa, son frescos, suaves y deliciosos para la mayoría de nuestro consumidores, son blandos y ligeros así también para la buena digestión.<br><br>
 
-       <div class="section">
-    <div class="card">
-        <div class="layout">
-            <div class="text">
-               <center> <h2>Escucha nuestro Spot de Radio</h2></center>
-                <center><p>¡Haz clic en el siguiente botón para escuchar nuestro spot de radio y conocer más sobre PanTastic!</p>
-                <!-- Botón estilizado según el diseño de la página -->
-                <a href="spot_de_radio.html" class="btn btn-spot">Escuchar Spot de Radio</a></center>
+Su función es única, pues el propósito de este pan es hacerte sentir mejor en las condiciones que estés, haciéndolo una buena opción especialmente para ti, si buscas una mejor digestión o opción para mejorar tu salud.<br><br>
+
+La función del pan es que tengas una mejor salud y también que tengas mejores opciones de panes en la cual te sientas mas cómodo y mejor contigo mismo.<br><br>
+
+Lo que beneficia al cliente es que al comer estos panes no solo es lo nutricional, si no también es lo económico, ya que hacemos todo lo posible para que el cliente disfrute de un buen alimento constante, como es el pan, de una forma mas barata y sencilla de conseguir, garantizando que compre de nuestro producto sin que tenga que sacrificar un ojo de la cara, haciéndolos mas baratos, económicos y de una buena calidad, para garantizar lo mejor a nuestro cliente.<br></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
           <div class="section">
             <div class="card">
                 <div class="layout">
                     <div class="text">
-
-
-
-                      
+                        
             <div class="card" style="padding-bottom: 1rem;">
                 <div class="text" style="text-align: center; margin-bottom: 2rem;">
                     <h2 style="display: inline-block;">Contáctanos</h2>
@@ -734,16 +730,23 @@
             </div>
             </div>
         </div>
+
+        
+        <div class="menu" id="circular-menu">
+        <div class="toggle" id="toggle-btn">
+            <i class="fas fa-share-alt"></i>
+        </div>
+        <ul>
+            <li style="--i: 0; --clr: #3446E6"><a href="https://www.facebook.com/profile.php?id=61586875747089" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="whatsapp" style="--i: 1;"><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li style="--i: 2; --clr: #1b1e21"><a href="https://x.com/PTasticTijuana" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+             <li style="--i: 3; --clr: #ff5733"><a href="https://www.instagram.com/pantastictijuana" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li style="--i: 4; --clr: #FF0000"><a href="https://www.youtube.com/channel/UCNgjvlTElgW44keQRjj8nqw" target="_blank"><i class="fab fa-youtube"></i>
+           </ul>
+    </div>
         
 
 
-
-
-
-                       
-                    </div>
-                </div>
-            </div>
 
     </div>
 

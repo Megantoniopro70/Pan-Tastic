@@ -404,135 +404,6 @@
             transform: scale(0.85);
         }
     }
-
-    /* --- ESTILOS ICONOS 3D PANTASTIC --- */
-.social-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.social-container a {
-    position: relative;
-    text-decoration: none;
-    color: var(--nav-bg); /* Usa el café de tu paleta */
-    display: block;
-    text-align: center;
-}
-
-.social-container a .layer {
-    width: 60px;
-    height: 60px;
-    transition: transform 0.3s;
-    position: relative;
-}
-
-.social-container a:hover .layer {
-    transform: rotate(-35deg) skew(20deg);
-}
-
-.social-container a .layer span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border: 1px solid var(--nav-bg);
-    border-radius: 8px;
-    transition: all 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-}
-
-.social-container a .layer span.fab, 
-.social-container a .layer span.fa-brands {
-    font-size: 30px;
-}
-
-/* Efecto de capas al pasar el mouse */
-.social-container a:hover .layer span:nth-child(1) { opacity: 0.2; }
-.social-container a:hover .layer span:nth-child(2) { opacity: 0.4; transform: translate(5px, -5px); }
-.social-container a:hover .layer span:nth-child(3) { opacity: 0.6; transform: translate(10px, -10px); }
-.social-container a:hover .layer span:nth-child(4) { opacity: 0.8; transform: translate(15px, -15px); }
-.social-container a:hover .layer span:nth-child(5) { transform: translate(20px, -20px); }
-
-/* Colores personalizados al Hover (usando tus variables) */
-.social-container a:hover .layer span { 
-    border-color: var(--accent); 
-    color: var(--accent); 
-}
-/* --- RESPONSIVE ICONOS REDES --- */
-@media (max-width: 600px) {
-
-    .social-container {
-        flex-wrap: wrap;          /* Permite que bajen a otra fila */
-        gap: 20px;
-    }
-
-    .social-container a .layer {
-        width: 50px;              /* Reduce tamaño */
-        height: 50px;
-    }
-
-    .social-container a .layer span.fab,
-    .social-container a .layer span.fa-brands {
-        font-size: 22px;          /* Reduce ícono */
-    }
-
-    .social-container {
-        margin-top: 30px;
-    }
-}
-
-.social-container a .icon-text {
-    margin-top: 15px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
-    opacity: 0;
-    color: var(--accent);
-}
-
-.social-container a:hover .icon-text {
-    opacity: 1;
-    transform: translateY(10px);
-}
-/* --- MAPA GOOGLE --- */
-.map-container {
-    margin-top: 2rem;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-}
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 850px) {
-        .menu-toggle { display: block; }
-        .nav-menu {
-            position: fixed; top: 70px; right: -100%; background: var(--nav-bg);
-            flex-direction: column; width: 250px; height: calc(100vh - 70px);
-            padding: 40px 30px; gap: 30px; transition: right 0.4s ease;
-        }
-        .nav-menu.active { right: 0; }
-        .layout, .reverse-layout, .contact-layout { flex-direction: column; text-align: center; }
-        .text { text-align: center; }
-        .text h2::after { margin: 10px auto 0; }
-        
-        .menu {
-            bottom: 15px;
-            right: 15px;
-            transform: scale(0.85);
-        }
-    }
     @media (max-width: 850px) {
     .nav-menu {
         overflow-y: auto;   /* 👈 permite scroll */
@@ -551,25 +422,7 @@
     }
 }
 
-    /* Nuevo estilo para el botón Spot de Radio */
-.btn-spot {
-    background-color: var(--accent); /* El color de fondo será el de la paleta de la web */
-    color: white;                    /* Texto en blanco */
-    padding: 12px 25px;              /* Aumentamos el tamaño del botón para hacerlo más prominente */
-    font-size: 1.1rem;               /* Tamaño de fuente cómodo */
-    border-radius: 25px;             /* Bordes redondeados */
-    font-weight: 600;                /* Texto en negrita */
-    text-align: center;              /* Alineación de texto centrado */
-    display: inline-block;           /* Para asegurar que el botón se vea correctamente */
-    text-decoration: none;           /* Eliminamos subrayado del enlace */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Animaciones */
-}
-
-.btn-spot:hover {
-    background-color: #BF652A; /* Cuando se pasa el mouse, cambia el color */
-    transform: scale(1.05); /* Animación de escala al pasar el mouse */
-}
-    /* Dropdown */
+       /* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -615,16 +468,18 @@
 .dropdown.active .dropdown-content {
     display: block;
 }
+
+
 </style>
 </head>
 <body>
 
-     <header class="navbar">
+    <header class="navbar">
         <div class="nav-container">
             <a href="#" class="logo"><img src="img/1.jpeg" alt="Logo">Pan-Tastic</a>
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html">Incio</a>
+                <a href="index.html">Inicio</a>
     <a href="acercadenosotros.html">Acerca de nosotros</a>
     <a href="colaboradores.html">Colaboradores</a>
     <a href="contacto.html">Contacto</a>
@@ -633,8 +488,8 @@
     <div class="dropdown">
        <a class="btn"> <button class="dropbtn">Más ☰</button></a>
         <div class="dropdown-content">
-            <a href="micionvicionvalores.html">Misión, visión y valores</a>
             <a href="#">Nuestros Panes</a>
+            <a href="publicidad.html">Publicidad</a>
             <a href="especificaciones.html">Especificaciones (Producto)</a>
             <a href="tecnología.html">Tecnología</a>
             <a href="mantenimiento.html">Mantemiento del equipo</a>
@@ -651,32 +506,74 @@
 </nav>        </div>
     </header>
 
-
-
     <div class="scroller">
 
-
-       <div class="section">
-    <div class="card">
-        <div class="layout">
-            <div class="text">
-               <center> <h2>Escucha nuestro Spot de Radio</h2></center>
-                <center><p>¡Haz clic en el siguiente botón para escuchar nuestro spot de radio y conocer más sobre PanTastic!</p>
-                <!-- Botón estilizado según el diseño de la página -->
-                <a href="spot_de_radio.html" class="btn btn-spot">Escuchar Spot de Radio</a></center>
-            </div>
-        </div>
-    </div>
-</div>
-
-          <div class="section">
+        <div class="section">
             <div class="card">
                 <div class="layout">
                     <div class="text">
+                        <center><h2>Nuestra Misión</h2></center>
+                        <p>Elaborar y distribuir productos de panadería artesanal de alta calidad, enfocados en cuidar la salud y el bienestar de nuestros consumidores. En PanTastic, nos comprometemos a ofrecer alimentos frescos y honestos, creados con ingredientes 100% naturales y procesos tradicionales de masa madre, brindando una experiencia excepcional a través de un excelente servicio al cliente.</p>
+                    </div>
+                    <div class="image"><img src="img/4.jpg" alt="Pan"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="card">
+                <div class="layout reverse-layout">
+                    <div class="text">
+                        <center><h2>Nuestra Visión</h2></center>
+                        <p>Consolidarnos en los próximos años como la panadería artesanal de referencia en nuestra región por nuestra calidad, innovación y confiabilidad. Aspiramos a transformar la panificación moderna ofreciendo panes de masa madre enriquecidos que aporten un sabor único y beneficios nutricionales reales, liderando la respuesta a la creciente demanda de una alimentación más natural, nutritiva y consciente.</p>
+                    </div>
+                    <div class="image"><img src="img/5.jpg" alt="Visión"></div>
+                </div>
+            </div>
+        </div>
 
-
-
-                      
+        <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="text">
+                        <h2>Nuestros Valores</h2>
+                        <p>
+                          <strong>• Honestidad y Transparencia:</strong> Ingredientes esenciales sin aditivos ocultos.<br><br>
+                          <strong>• Salud y Bienestar:</strong> Alimentos funcionales que favorecen la digestión.<br><br>
+                          <strong>• Calidad Artesanal:</strong> Respeto por la fermentación biológica tradicional.<br><br>
+                          <strong>• Innovación Constante:</strong> Mezclas únicas en la panadería tradicional.<br><br>
+                          <strong>• Pasión por el Cliente:</strong> Atención cálida y un servicio posventa excepcional.<br><br>
+                          <strong>• Responsabilidad Ambiental:</strong> Uso de empaques ecológicos y procesos limpios.
+                        </p>
+                    </div>
+                    <div class="image"><img src="img/6.jpg" alt="Valores"></div>
+                </div>
+            </div>
+        </div>
+<div class="section">
+    <div class="card">
+        <div class="layout">
+                <div class="text">
+                    <center><h2>Nuestros Objetivos</h2></center>
+                <strong><center><p>CORTO PLAZO<br></strong>
+•Formalizar el negocio y aperturar mediante <br>
+•Comenzar a construir reputación.<br>
+•Conseguir la rentabilidad operativa.<br>
+•Conseguir proveedores.<br>
+•Conseguir estandarizar la producción.<br>
+<strong><br>MEDIANO PLAZO<br></strong>
+•Introducir nuevos productos.<br>
+•Conseguir una estabilidad laboral.<br>
+•Conseguir presencia digital.<br>
+<strong><br>LARGO PLAZO<br></strongs>
+•Obtener una segunda sucursal.<br>
+•Explorar nuevos mercados en el estado.<br>
+•Buscar una mayor automatización de la producción.<br>
+</p></center></div>
+            <div class="image"><img src="img/3.jpg" alt="Pan"></div></div>
+        </div>
+</div>
+        <div class="section">
             <div class="card" style="padding-bottom: 1rem;">
                 <div class="text" style="text-align: center; margin-bottom: 2rem;">
                     <h2 style="display: inline-block;">Contáctanos</h2>
@@ -732,19 +629,23 @@
                 </div>
                 <div class="mini-footer">&copy; 2026 PanTastic. Todos los derechos reservados. | Diseñado por estudiantes de Ing. en Sistemas - ITT.</div>
             </div>
-            </div>
         </div>
-        
 
+    </div>
 
-
-
-
-                       
-                    </div>
-                </div>
-            </div>
-
+    <div class="menu" id="circular-menu">
+        <div class="toggle" id="toggle-btn">
+            <i class="fas fa-share-alt"></i>
+         </div>
+        <ul>
+            <li style="--i: 0; --clr: #3446E6"><a href="https://www.facebook.com/profile.php?id=61586875747089" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="whatsapp" style="--i: 1;"><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li style="--i: 2; --clr: #1b1e21"><a href="https://x.com/PTasticTijuana" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+             <li style="--i: 3; --clr: #ff5733"><a href="https://www.instagram.com/pantastictijuana" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li style="--i: 4; --clr: #FF0000"><a href="https://www.youtube.com/channel/UCNgjvlTElgW44keQRjj8nqw" target="_blank"><i class="fab fa-youtube"></i>
+        </a>
+    </li>
+           </ul>
     </div>
 
     <script>
@@ -761,6 +662,7 @@
         toggleBtn.addEventListener('click', () => {
             circularMenu.classList.toggle('active');
         });
+
         const dropdown = document.querySelector(".dropdown");
 const dropbtn = document.querySelector(".dropbtn");
 

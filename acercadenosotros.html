@@ -195,6 +195,15 @@
     }
 
     .image img {
+        width: 200%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease;
+    }
+
+    .image1 img {
         width: 100%;
         max-width: 400px;
         height: auto;
@@ -202,6 +211,7 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         transition: transform 0.4s ease;
     }
+
 
     .image img:hover {
         transform: translateY(-10px);
@@ -404,135 +414,6 @@
             transform: scale(0.85);
         }
     }
-
-    /* --- ESTILOS ICONOS 3D PANTASTIC --- */
-.social-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.social-container a {
-    position: relative;
-    text-decoration: none;
-    color: var(--nav-bg); /* Usa el café de tu paleta */
-    display: block;
-    text-align: center;
-}
-
-.social-container a .layer {
-    width: 60px;
-    height: 60px;
-    transition: transform 0.3s;
-    position: relative;
-}
-
-.social-container a:hover .layer {
-    transform: rotate(-35deg) skew(20deg);
-}
-
-.social-container a .layer span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border: 1px solid var(--nav-bg);
-    border-radius: 8px;
-    transition: all 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-}
-
-.social-container a .layer span.fab, 
-.social-container a .layer span.fa-brands {
-    font-size: 30px;
-}
-
-/* Efecto de capas al pasar el mouse */
-.social-container a:hover .layer span:nth-child(1) { opacity: 0.2; }
-.social-container a:hover .layer span:nth-child(2) { opacity: 0.4; transform: translate(5px, -5px); }
-.social-container a:hover .layer span:nth-child(3) { opacity: 0.6; transform: translate(10px, -10px); }
-.social-container a:hover .layer span:nth-child(4) { opacity: 0.8; transform: translate(15px, -15px); }
-.social-container a:hover .layer span:nth-child(5) { transform: translate(20px, -20px); }
-
-/* Colores personalizados al Hover (usando tus variables) */
-.social-container a:hover .layer span { 
-    border-color: var(--accent); 
-    color: var(--accent); 
-}
-/* --- RESPONSIVE ICONOS REDES --- */
-@media (max-width: 600px) {
-
-    .social-container {
-        flex-wrap: wrap;          /* Permite que bajen a otra fila */
-        gap: 20px;
-    }
-
-    .social-container a .layer {
-        width: 50px;              /* Reduce tamaño */
-        height: 50px;
-    }
-
-    .social-container a .layer span.fab,
-    .social-container a .layer span.fa-brands {
-        font-size: 22px;          /* Reduce ícono */
-    }
-
-    .social-container {
-        margin-top: 30px;
-    }
-}
-
-.social-container a .icon-text {
-    margin-top: 15px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
-    opacity: 0;
-    color: var(--accent);
-}
-
-.social-container a:hover .icon-text {
-    opacity: 1;
-    transform: translateY(10px);
-}
-/* --- MAPA GOOGLE --- */
-.map-container {
-    margin-top: 2rem;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-}
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 850px) {
-        .menu-toggle { display: block; }
-        .nav-menu {
-            position: fixed; top: 70px; right: -100%; background: var(--nav-bg);
-            flex-direction: column; width: 250px; height: calc(100vh - 70px);
-            padding: 40px 30px; gap: 30px; transition: right 0.4s ease;
-        }
-        .nav-menu.active { right: 0; }
-        .layout, .reverse-layout, .contact-layout { flex-direction: column; text-align: center; }
-        .text { text-align: center; }
-        .text h2::after { margin: 10px auto 0; }
-        
-        .menu {
-            bottom: 15px;
-            right: 15px;
-            transform: scale(0.85);
-        }
-    }
     @media (max-width: 850px) {
     .nav-menu {
         overflow-y: auto;   /* 👈 permite scroll */
@@ -551,24 +432,6 @@
     }
 }
 
-    /* Nuevo estilo para el botón Spot de Radio */
-.btn-spot {
-    background-color: var(--accent); /* El color de fondo será el de la paleta de la web */
-    color: white;                    /* Texto en blanco */
-    padding: 12px 25px;              /* Aumentamos el tamaño del botón para hacerlo más prominente */
-    font-size: 1.1rem;               /* Tamaño de fuente cómodo */
-    border-radius: 25px;             /* Bordes redondeados */
-    font-weight: 600;                /* Texto en negrita */
-    text-align: center;              /* Alineación de texto centrado */
-    display: inline-block;           /* Para asegurar que el botón se vea correctamente */
-    text-decoration: none;           /* Eliminamos subrayado del enlace */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Animaciones */
-}
-
-.btn-spot:hover {
-    background-color: #BF652A; /* Cuando se pasa el mouse, cambia el color */
-    transform: scale(1.05); /* Animación de escala al pasar el mouse */
-}
     /* Dropdown */
 .dropdown {
     position: relative;
@@ -624,8 +487,7 @@
             <a href="#" class="logo"><img src="img/1.jpeg" alt="Logo">Pan-Tastic</a>
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html">Incio</a>
-    <a href="acercadenosotros.html">Acerca de nosotros</a>
+                <a href="index.html">Inicio</a>
     <a href="colaboradores.html">Colaboradores</a>
     <a href="contacto.html">Contacto</a>
 
@@ -635,6 +497,7 @@
         <div class="dropdown-content">
             <a href="micionvicionvalores.html">Misión, visión y valores</a>
             <a href="#">Nuestros Panes</a>
+            <a href="publicidad.html">Publicidad</a>
             <a href="especificaciones.html">Especificaciones (Producto)</a>
             <a href="tecnología.html">Tecnología</a>
             <a href="mantenimiento.html">Mantemiento del equipo</a>
@@ -651,32 +514,150 @@
 </nav>        </div>
     </header>
 
-
-
     <div class="scroller">
 
 
-       <div class="section">
-    <div class="card">
-        <div class="layout">
-            <div class="text">
-               <center> <h2>Escucha nuestro Spot de Radio</h2></center>
-                <center><p>¡Haz clic en el siguiente botón para escuchar nuestro spot de radio y conocer más sobre PanTastic!</p>
-                <!-- Botón estilizado según el diseño de la página -->
-                <a href="spot_de_radio.html" class="btn btn-spot">Escuchar Spot de Radio</a></center>
-            </div>
-        </div>
-    </div>
-</div>
 
-          <div class="section">
+
+
+
+
+
+        <div class="section">
             <div class="card">
                 <div class="layout">
                     <div class="text">
+                        <center><h2>Pan-Tastic</h2></center>
+                        <center><p>PanTastic es una microempresa que forma parte de la industria alimentaria dedicada a la venta y producción de panes naturales de masa madre, ubicada en Boulevard Agua Caliente 2798-21, Davila, 22044 Tijuana, Baja California, México.</p><center>
+                    </div>
+                    <div class="image1"><img src="img/1.jpeg" alt="Pan"></div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="layout">
+                <div class="image1"><img src="img/2.jpg" alt="Pan"></div>
+                <div class="text">
+                    <center><h2>Porpuesta de valor</h2></center>
+                <center><p>En PanTastic, redefinimos el estándar de la panificación moderna regresando a lo esencial. Nuestra propuesta de valor radica en la honestidad del producto: utilizamos exclusivamente harina, sal, agua, masa madre de fermentación natural y aromáticos. Al eliminar grasas trans, levaduras industriales y aditivos químicos, ofrecemos un alimento que respeta los procesos biológicos tradicionales, garantizando una digestibilidad superior y un perfil nutricional honesto para la familia mexicana.</p></center></div></div>
+                <br>
+                <br>
+                <br>
+                <br>
+                 
+
+                
+                
+</div>
+</div>
+
+<div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="text">
+                        <center><h2>Nosotros</h2></center>
+                    <center><p>A continuacion presentaremos a los fundadores que hacen que Pan-Tastic sea un lugar mejor para todos ustedes como clientes y consumidores</p></center>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        
+ <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/1col.jpeg" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Karla Amairani Delgado Lorenzo</h2></center>
+                        <center><p>Encargado del área de marketing en Pan -Tastic, desarrollador de estrategias de promoción y manejo de redes sociales.</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+<div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/2col.jpeg" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Hernandez De La Luz Alan Xavier</h2></center>
+                        <center><p>Soy Alan, estudiante de segundo semestre de Ingeniería en Sistemas Computacionales en el Instituto Tecnológico de Tijuana. Actualmente me encuentro en formación en áreas como programación, bases de datos y desarrollo web. Me caracterizo por ser responsable, constante y con iniciativa para aprender nuevas tecnologías y fortalecer mis habilidades en el desarrollo de software.</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                    <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/3col.png" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Soto Bravo Jose Antonio</h2></center>
+                        <center><p>Orgulloso de ser ingeniero en sistemas, en la empresa soy encargado de la cracion y el mantenimiento de la paguina web de Pan-Tastic, apacionado de su trabajo y sintiendome orgulloso de ser parte de esta panaderia y trabajar para esta misma.</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+                     <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/4col.jpeg" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Rodrigez Juarez Axel Osvaldo </h2></center>
+                        <center><p>Mi nombre es Axel, soy estudiante de Ingeniería en Sistemas Computacionales y formo parte del equipo que desarrolla este proyecto de panadería. Mi participación se centra en aportar ideas organizativas y estratégicas, además de colaborar en la presentación y comunicación del proyecto.</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/5col.png" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Lepe Garcia César </h2></center>
+                        <center><p>Soy un estudiante de ingeneria en sistemas en el tecnologico, y tambien soy el encargado de la probabilidad y la estadistica, capaz de calcular las pocibilidades, precios, compras y venta de la empresa y orgulloso de ser parte de la compañia Pan-Tastic.</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/6col.png" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Orellana Galvez Christian Alfredo</h2></center>
+                        <center><p>Ingeniero en sistemas computacionales de la universidad del tecnologico, soy el encargado De la manofactura y la contabilidad de la panaderia, ademas tambien ayudo a calcular lo que es parte de la probabilidad de Pan-Tastic</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="section">
+            <div class="card">
+                <div class="layout">
+                    <div class="image"><img src="img/7col.png" alt="Pan"></div>
+                    <div class="text">
+                        <center><h2>Arroyo Lopez Dannia Maria</h2></center>
+                        <center><p>Soy de la niversida de Ingeneria en sistemas en el tecnologico, soy parte de atencion al cliente de nuestra panadera Pan-Tastic, ademas tambien ayudo a la zona de marketing y redes sociales.</p></center>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
 
 
 
-                      
+
+                 <div class="section">
             <div class="card" style="padding-bottom: 1rem;">
                 <div class="text" style="text-align: center; margin-bottom: 2rem;">
                     <h2 style="display: inline-block;">Contáctanos</h2>
@@ -737,14 +718,19 @@
         
 
 
+    </div>
 
-
-
-                       
-                    </div>
-                </div>
-            </div>
-
+    <div class="menu" id="circular-menu">
+        <div class="toggle" id="toggle-btn">
+            <i class="fas fa-share-alt"></i>
+        </div>
+        <ul>
+            <li style="--i: 0; --clr: #3446E6"><a href="https://www.facebook.com/profile.php?id=61586875747089" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="whatsapp" style="--i: 1;"><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li style="--i: 2; --clr: #1b1e21"><a href="https://x.com/PTasticTijuana" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+             <li style="--i: 3; --clr: #ff5733"><a href="https://www.instagram.com/pantastictijuana" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li style="--i: 4; --clr: #FF0000"><a href="https://www.youtube.com/channel/UCNgjvlTElgW44keQRjj8nqw" target="_blank"><i class="fab fa-youtube"></i>
+           </ul>
     </div>
 
     <script>
@@ -770,4 +756,4 @@ dropbtn.addEventListener("click", () => {
     </script>
 
 </body>
-</html>
+</html> 

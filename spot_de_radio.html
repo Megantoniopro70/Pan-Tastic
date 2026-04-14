@@ -533,23 +533,6 @@
             transform: scale(0.85);
         }
     }
-    @media (max-width: 850px) {
-    .nav-menu {
-        overflow-y: auto;   /* 👈 permite scroll */
-    }
-}
-@media (max-width: 850px) {
-    .dropdown-content {
-        position: static;
-        background: none;
-        box-shadow: none;
-    }
-
-    .dropdown-content a {
-        color: #E8E8E8;
-        padding: 10px 0;
-    }
-}
 
     /* Nuevo estilo para el botón Spot de Radio */
 .btn-spot {
@@ -569,87 +552,105 @@
     background-color: #BF652A; /* Cuando se pasa el mouse, cambia el color */
     transform: scale(1.05); /* Animación de escala al pasar el mouse */
 }
-    /* Dropdown */
-.dropdown {
-    position: relative;
-}
 
-.dropbtn {
-    background: none;
-    border: none;
-    color: #E8E8E8;
-    font-size: 15px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.dropbtn:hover {
-    color: var(--accent);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    top: 35px;
-    right: 0;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    overflow: hidden;
-    z-index: 1000;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px 15px;
-    color: var(--text-main);
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
+.player-card {
+    display: flex;
+    flex-direction: row;
     background-color: var(--bg-color);
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    overflow: hidden;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 15px;
 }
 
-/* Mostrar menú */
-.dropdown.active .dropdown-content {
-    display: block;
+.player-card .cover img {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.player-card .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 20px;
+}
+
+.player-card .title {
+    font-family: 'Lora', serif;
+    font-size: 1.4rem;
+    color: var(--nav-bg);
+    margin-bottom: 5px;
+}
+
+.player-card .artist {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.player-card .controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.player-card .controls button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.player-card .controls button:hover {
+    transform: scale(1.1);
+}
+
+.player-card #progress {
+    width: 100%;
+    accent-color: var(--accent);
+}
+
+/* Responsivo */
+@media (max-width: 600px){
+    .player-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    .player-card .cover img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .player-card .info {
+        padding: 0;
+        text-align: center;
+    }
 }
 </style>
 </head>
 <body>
-
-     <header class="navbar">
+    <header class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo"><img src="img/1.jpeg" alt="Logo">Pan-Tastic</a>
+            <a href="#" class="logo"><img src="img/1.jpeg" alt="Logo">PanTastic</a>
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html">Incio</a>
-    <a href="acercadenosotros.html">Acerca de nosotros</a>
-    <a href="colaboradores.html">Colaboradores</a>
-    <a href="contacto.html">Contacto</a>
-
-    <!-- Botón desplegable -->
-    <div class="dropdown">
-       <a class="btn"> <button class="dropbtn">Más ☰</button></a>
-        <div class="dropdown-content">
-            <a href="micionvicionvalores.html">Misión, visión y valores</a>
-            <a href="#">Nuestros Panes</a>
-            <a href="especificaciones.html">Especificaciones (Producto)</a>
-            <a href="tecnología.html">Tecnología</a>
-            <a href="mantenimiento.html">Mantemiento del equipo</a>
-            <a href="diagrama.html">Diagrama de proceso</a>
-            <a href="materia.html">Materia prima</a>
-            <a href="seleccion.html">Seleccion de provedores</a>
-            <a href="mano.html">Mano de obra/vacantes</a>
-            <a href="mejora.html">Mejora continua</a>
-
+                <a href="index.html">Inicio</a>
+                <a href="publicidad.html">Regresar</a>
+            </nav>
         </div>
-    </div>
+    </header>   
 
-    
-</nav>        </div>
-    </header>
 
 
 
@@ -660,91 +661,30 @@
     <div class="card">
         <div class="layout">
             <div class="text">
-               <center> <h2>Escucha nuestro Spot de Radio</h2></center>
-                <center><p>¡Haz clic en el siguiente botón para escuchar nuestro spot de radio y conocer más sobre PanTastic!</p>
-                <!-- Botón estilizado según el diseño de la página -->
-                <a href="spot_de_radio.html" class="btn btn-spot">Escuchar Spot de Radio</a></center>
+               <center> <h2>Spot de Radio</h2></center>
+                <div class="player-card">
+    <div class="cover">
+        <img src="img/1.jpeg" alt="Portada de la canción">
+    </div>
+    <div class="info">
+        <div class="title">Pan-Tastic</div>
+        <div class="artist">pan-tastic</div>
+        <audio id="audio" src="img/audio1.mpeg"></audio>
+        <div class="controls">
+            <button id="play">&#9654;</button>
+        </div>
+        <input type="range" id="progress" value="0" min="0" max="100">
+
+    </div>
+</div>
+               <center><p>Valla al menú si desea regresar</p></center> 
             </div>
         </div>
     </div>
 </div>
 
-          <div class="section">
-            <div class="card">
-                <div class="layout">
-                    <div class="text">
-
-
-
-                      
-            <div class="card" style="padding-bottom: 1rem;">
-                <div class="text" style="text-align: center; margin-bottom: 2rem;">
-                    <h2 style="display: inline-block;">Contáctanos</h2>
-                </div>
-                
-                <div class="contact-layout">
-                    <div class="contact-info">
-                        <h3>Visítanos</h3>
-                        
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Ubicación:</strong><br>
-                                Blvd. Agua Caliente 2798-21, Davila<br>
-                                C.P. 22044, Tijuana, B.C., México
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Horarios de Atención:</strong><br>
-                                Lunes a Domingo: 7:00 AM - 8:00 PM<br>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <strong>Teléfono / Pedidos:</strong><br>
-                                +52 (664) xxxxxxx
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-form">
-                        <form action="#" method="POST">
-                            <div class="form-group">
-                                <label for="nombre">Nombre completo</label>
-                                <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Correo electrónico</label>
-                                <input type="email" id="email" class="form-control" placeholder="tu@correo.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="mensaje">¿En qué podemos ayudarte?</label>
-                                <textarea id="mensaje" class="form-control" placeholder="Escribe tu duda, pedido o comentario aquí..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn-submit">Enviar Mensaje</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="mini-footer">&copy; 2026 PanTastic. Todos los derechos reservados. | Diseñado por estudiantes de Ing. en Sistemas - ITT.</div>
-            </div>
-            </div>
-        </div>
-        
-
-
-
-
-
-                       
-                    </div>
-                </div>
-            </div>
-
+    
+ 
     </div>
 
     <script>
@@ -761,13 +701,38 @@
         toggleBtn.addEventListener('click', () => {
             circularMenu.classList.toggle('active');
         });
-        const dropdown = document.querySelector(".dropdown");
-const dropbtn = document.querySelector(".dropbtn");
-
-dropbtn.addEventListener("click", () => {
-    dropdown.classList.toggle("active");
-});
     </script>
+<script>
+// Seleccionamos los elementos del reproductor
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('play');
+const progress = document.getElementById('progress');
 
+// Función para alternar play/pause
+playBtn.addEventListener('click', () => {
+    if(audio.paused){
+        audio.play();
+        playBtn.textContent = '⏸'; // Cambia el icono a pausa
+    } else{
+        audio.pause();
+        playBtn.textContent = '▶'; // Cambia el icono a play
+    }
+});
+
+// Actualizar la barra de progreso mientras se reproduce el audio
+audio.addEventListener('timeupdate', () => {
+    if(audio.duration){
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.value = percent;
+    }
+});
+
+// Permitir mover el audio arrastrando la barra
+progress.addEventListener('input', () => {
+    if(audio.duration){
+        audio.currentTime = (progress.value / 100) * audio.duration;
+    }
+});
+</script>
 </body>
 </html>
